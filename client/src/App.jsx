@@ -1,7 +1,19 @@
 import "./App.css";
+import BodyList from "./components/BodyList";
 
 function App() {
-  return <div className="App">{/* Start coding here */}</div>;
+  return (
+    <main>
+      <header>
+      </header>
+      <section>
+        <article>
+          <BodyList/>
+          <footer></footer>
+        </article>
+      </section>
+    </main>
+  );
 }
 
 export default App;
