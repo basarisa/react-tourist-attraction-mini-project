@@ -22,16 +22,16 @@ function BodyList() {
   }, [input]); // เรียกเมื่อ input เปลี่ยน
 
   return (
-    <section className="p-6">
-      <header>
+    <section className=" p-6 font-medium font-PlexSansThai ">
+      <header className="">
         <div className="App">
-          <h1 className="text-3xl font-bold underline text-red-600 font-NotoSansThai">
+          <h1 className="text-5xl font-semibold  text-[#2b9fd5] text-center">
             เที่ยวไหนดี
           </h1>
           <h3>ค้นหาที่เที่ยว</h3>
           <input
-            className="input"
-            placeholder="หาที่เที่ยวแล้วไปกัน..."
+            className="text-center w-full focus:outline-none focus:ring-1 focus:ring-transparent"
+            placeholder="หาที่เที่ยวแล้วไปกัน ..."
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
@@ -46,36 +46,35 @@ function BodyList() {
             className="flex flex-row mb-6 border p-4 rounded shadow space-x-10"
           >
             <img
-              className="w-48 rounded-2xl"
-              key={0} // ใช้ 0 เป็นคีย์
-              src={item.photos[0]} // แสดงเฉพาะรูปภาพแรก
-              alt={`${item.title} - 1`} // ใช้ backticks
-              style={{ width: "200px", margin: "5px" }}
+              className="rounded-3xl w-96"
+              key={0}
+              src={item.photos[0]}
+              alt={`${item.title} - 1`}
             />
             <div className="flex flex-col ">
-              <h2 className="text-2xl font-bold">{item.title}</h2>
-              <p className="text-gray-700 mb-2 ">
+              <h2 className="text-2xl font-semibold">{item.title}</h2>
+              <p className="text-gray-500 font-normal mb-2">
                 {item.description.length > 100
                   ? `${item.description.substring(0, 100)}... `
                   : item.description}
                 <br />
                 <a
-                  href={item.url} // ลิงค์ที่จะเปิดเมื่อคลิก
-                  target="_blank" // เปิดลิงค์ในแท็บใหม่
-                  rel="noopener noreferrer" // เพิ่มความปลอดภัย
-                  className="text-blue-500 underline" // เพิ่มสไตล์ให้ลิงค์
+                  href={item.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-sky-500 underline" 
                 >
                   อ่านต่อ
                 </a>
               </p>
               <div>
-                <span>หมวด</span>
+                <span className="text-gray-500">หมวด</span>
                 {item.tags.map((tag, index) => (
-                  <span key={index}>
+                  <span className="text-gray-500 text-sm" key={index}>
                     {index > 0 && index === item.tags.length - 1 ? "และ" : null}
                     <a
                       href={tag}
-                      className="text-gray-800 underline px-3 py-1 rounded-full text-sm"
+                      className="text-gray-500 underline px-3 py-1 rounded-full text-base"
                     >
                       {tag}
                     </a>
@@ -88,11 +87,10 @@ function BodyList() {
                   .slice(1) // เริ่มต้นจาก index 1
                   .map((photo, photoIndex) => (
                     <img
-                      className="w-48 m-8 rounded-2xl"
+                      className="w-24 h-24 m-2 rounded-xl"
                       key={photoIndex} // ใช้ photoIndex เพราะไม่ต้องเพิ่มค่า
                       src={photo}
                       alt={`${item.title} - ${photoIndex + 1}`} // ใช้ backticks
-                      style={{ width: "200px", margin: "5px" }}
                     />
                   ))}
               </div>

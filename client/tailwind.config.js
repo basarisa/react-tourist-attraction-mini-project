@@ -5,6 +5,8 @@ export default {
     extend: {
       fontFamily: {
         NotoSansThai: ["Noto Sans Thai"],
+        PlexSansThai: ["IBM Plex Sans Thai"],
+
       },
     },
   },
