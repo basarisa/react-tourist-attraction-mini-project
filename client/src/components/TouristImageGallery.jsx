@@ -1,22 +1,23 @@
 import React from "react";
 
-function TouristImageGallery(photos, title) {
-  if (!Array.isArray(photos) || photos.length <= 1) {
-    return null;
+const TouristImageGallery = ({ photos = [], title }) => {
+  if (!Array.isArray(photos)) {
+    console.error("Expected 'photos' to be an array.");
+    return null; // Or some fallback UI
   }
 
   return (
-    <div className="flex flex-wrap gap-2 mb-2">
+    <div className="flex flex-row gap-2 mb-2 ">
       {photos.slice(1).map((photo, index) => (
         <img
-          className="w-24 h-24 m-2 rounded-xl"
+          className="w-[6rem] h-[6rem] m-2 rounded-xl"
           key={index}
           src={photo}
-          alt={`${title} - ${index + 1}`}
+          alt={`${title} - ${index + 2}`}
         />
       ))}
     </div>
   );
-}
+};
 
 export default TouristImageGallery;

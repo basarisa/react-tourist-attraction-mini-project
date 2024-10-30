@@ -7,9 +7,9 @@ function Header({ input, setInput }) {
         <h1 className="text-5xl font-semibold  text-[#2b9fd5] text-center">
           เที่ยวไหนดี
         </h1>
-        <h3>ค้นหาที่เที่ยว</h3>
+        <h3 className="text-slate-600">ค้นหาที่เที่ยว</h3>
         <input
-          className="text-center w-full focus:outline-none focus:ring-1 focus:ring-transparent"
+          className="text-center w-full focus:outline-none focus:ring-1 focus:ring-transparent text-neutral-700 text-xl"
           placeholder="หาที่เที่ยวแล้วไปกัน ..."
           type="text"
           value={input}

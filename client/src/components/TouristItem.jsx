@@ -1,14 +1,15 @@
 import React from "react";
 import TouristImageGallery from "./TouristImageGallery";
 
-function TouristItem({item}) {
-  return (<div className="flex flex-row mb-6 border p-4 rounded shadow space-x-10">
+function TouristItem({ item }) {
+  return (
+    <div className="flex flex-row mt-8 p-4 rounded space-x-10 ">
       <img
         className="rounded-3xl w-96"
         src={item.photos[0]}
         alt={`${item.title} - 1`}
       />
-      <div className="flex flex-col">
+      <div className="flex flex-col gap-1 mt-3">
         <h2 className="text-2xl font-semibold">{item.title}</h2>
         <p className="text-gray-500 font-normal mb-2">
           {item.description.length > 100
@@ -27,7 +28,7 @@ function TouristItem({item}) {
         <div>
           <span className="text-gray-500">หมวด</span>
           {item.tags.map((tag, index) => (
-            <span className="text-gray-500 text-sm" key={index}>
+            <span className="text-gray-500 font-normal" key={index}>
               {index > 0 && index === item.tags.length - 1 ? "และ" : null}
               <a
                 href={tag}

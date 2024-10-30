@@ -24,7 +24,7 @@ function BodyList() {
   }, [input]);
 
   return (
-    <section className="flex-row-reverse p-20 font-medium font-PlexSansThai space-x-20">
+    <section className="flex-row-reverse p-20 font-medium font-PlexSansThai space-x-20 ">
       <Header input={input} setInput={setInput} />
       <div>
         {touristInfo.map((item, index) => (
